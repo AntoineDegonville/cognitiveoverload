@@ -1,0 +1,71 @@
+$primary: #7f7f7f;
+$secondary: #000000;
+$black: #000000;
+$white: #fff;
+$gray: #9b9b9b;
+.form__group {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 40%;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border-bottom: 1px solid $black;
+  outline: 0;
+  font-size: 3rem;
+  color: $black;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:placeholder-shown ~ .form__label {
+    font-size: 3rem;
+    cursor: text;
+    top: 20px;
+  }
+}
+
+.form__label {
+  position: absolute;
+  top: -10px;
+  display: block;
+  transition: 0.2s;
+  font-size: 2rem;
+  color: $black;
+}
+
+.form__field:focus {
+  ~ .form__label {
+    position: absolute;
+    top: -10px;
+    display: block;
+    transition: 0.2s;
+    font-size: 2rem;
+    color: $black;
+  }
+  border-width: 1px;
+  border-image-slice: 1;
+}
+/* reset input */
+.form__field{
+  &:required,&:invalid { box-shadow:none; }
+}
+/* demo */
+body {
+  font-family: 'Dancing Script', 'recursive'; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.5rem;
+  background-color:#222222;
+}
