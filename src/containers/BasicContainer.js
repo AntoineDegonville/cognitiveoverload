@@ -13,6 +13,7 @@ const Container = () => {
     const [isEnabled, setIsEnabled] = useState(true)
 
     const ref = useRef(null)
+    let interval = null
 
     let setup = {
         bpm: {
@@ -33,7 +34,6 @@ const Container = () => {
     }, [setup.bpm.value, setup.duration, setup.range.length])
 
     useEffect(() => {
-        let interval = null
 
         if (isActive) {
             let i = 0
@@ -54,8 +54,6 @@ const Container = () => {
                     console.log(setup.range[indexB], '    ', setup.range[indexA])
                 }
             }, setup.bpm.interval)
-        } else {
-            return () => clearInterval(interval)
         }
     // eslint-disable-next-line
     }, [isActive])
@@ -68,6 +66,7 @@ const Container = () => {
     const handleStop = () => {
         ref.current.stop()
         setIsActive(false)
+        return clearInterval(interval)
     }
 
     return (
