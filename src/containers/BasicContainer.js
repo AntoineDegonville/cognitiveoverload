@@ -89,6 +89,7 @@ const Container = () => {
 
             // play sound for the first 4 bar
             audioNumbers[setup.range[indexB]].play()
+            metronomy.play()
             console.log(setup.range[indexB], '    ')
     
     
@@ -104,7 +105,7 @@ const Container = () => {
                         indexB = Math.floor(Math.random() * setup.range.length)
                         console.log(setup.range[indexB], '    ', setup.range[indexA])
                         audioNumbers[setup.range[indexB]].play()
-
+                        metronomy.play()
                         started = true
                     }
                 } else {
@@ -118,7 +119,7 @@ const Container = () => {
                         indexB = Math.floor(Math.random() * setup.range.length)
                         console.log(setup.range[indexB], '    ', setup.range[indexA])
                         audioNumbers[setup.range[indexB]].play()
-
+                        metronomy.play()
                         // play the next index sound
                     }
                 }
