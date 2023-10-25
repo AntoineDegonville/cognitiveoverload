@@ -86,7 +86,7 @@ const LoopGenerator = ({enabled, countDown, setCount, stereoMode, hasToStop}) =>
         } else {
             enabled(false)
         }
-
+        // eslint-disable-next-line
     }, [setup.bpm.value, setup.duration, setup.range.length])
 
     useEffect(() => {
@@ -104,6 +104,7 @@ const LoopGenerator = ({enabled, countDown, setCount, stereoMode, hasToStop}) =>
                     setCount(false)
                     setIsActive(true)
                     ref.current.start()
+                    // eslint-disable-next-line
                     go = true
                     console.log('go', go)
                 }
