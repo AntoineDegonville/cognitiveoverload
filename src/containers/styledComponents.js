@@ -13,6 +13,18 @@ export const BlockContainer = styled.div`
     background-repeat: no-repeat;
     background-position: center;
     filter: invert(1);
+
+`
+
+export const Mode = styled.div`
+    margin-top: 1rem;
+    width: 160px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: black;
+    color: white;
+    border-radius: 0.5rem;
 `
 
 export const Title = styled.div`
@@ -24,7 +36,7 @@ export const Title = styled.div`
 
 export const ContainerBlurredBackground = styled.div`
     background-color: rgb(0,0,0,0);
-    width: 50vw;
+    width: 80vw;
     height: 50vh;
     color: white;
     display: flex;
