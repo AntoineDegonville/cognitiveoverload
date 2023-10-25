@@ -42,6 +42,7 @@ export const ContainerBlurredBackground = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    
 `
 export const ContainerBackground = styled.div`
     background-color: transparent;
@@ -51,17 +52,22 @@ export const ContainerBackground = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 3rem;
+
 `
 export const InputsContainer = styled.div`
     height: 90%;
     width: 95%;
     padding: 10px;
+    margin-top: 3rem;
 `
 
 export const ButtonContainer = styled.div`
     width: 40%;
     display: flex;
     justify-content: space-around;
+    margin-top: 3rem;
+
 `
 
 export const ButtonActive = styled.button`
