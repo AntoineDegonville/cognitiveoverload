@@ -14,6 +14,17 @@ import sevenSrc from '../sounds/7.mp3'
 import eightSrc from '../sounds/8.mp3'
 import nineSrc from '../sounds/9.mp3'
 import tenSrc from '../sounds/10.mp3'
+import oneSrcConstance from '../sounds/1_C.mp3'
+import twoSrcConstance from '../sounds/2_C.mp3'
+import threeSrcConstance from '../sounds/3_C.mp3'
+import fourSrcConstance from '../sounds/4_C.mp3'
+import fiveSrcConstance from '../sounds/5_C.mp3'
+import sixSrcConstance from '../sounds/6_C.mp3'
+import sevenSrcConstance from '../sounds/7_C.mp3'
+import eightSrcConstance from '../sounds/8_C.mp3'
+import nineSrcConstance from '../sounds/9_C.mp3'
+import tenSrcConstance from '../sounds/10_C.mp3'
+
 
 const LoopGenerator = ({enabled, countDown, setCount, stereoMode, hasToStop}) => {
 
@@ -40,11 +51,17 @@ const LoopGenerator = ({enabled, countDown, setCount, stereoMode, hasToStop}) =>
     const audioSources = [
         oneSrc, twoSrc, threeSrc, fourSrc, fiveSrc,
         sixSrc, sevenSrc, eightSrc, nineSrc, tenSrc
-    ];
+    ]
+
+    const audioSourcesConstance =[
+        oneSrcConstance, twoSrcConstance, threeSrcConstance,
+        fourSrcConstance, fiveSrcConstance, sixSrcConstance,
+        sevenSrcConstance, eightSrcConstance, nineSrcConstance, tenSrcConstance
+    ]
     
     const audioElements = []
     
-    for (const src of audioSources) {
+    for (const src of stereoMode.isStereo && !stereoMode.isLeft ? audioSourcesConstance : audioSources) {
         const audioElement = new Audio(src)
         const tmp = audioContext.createMediaElementSource(audioElement)
         tmp.connect(panNode)
